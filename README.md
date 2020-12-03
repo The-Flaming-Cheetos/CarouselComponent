@@ -1,4 +1,6 @@
-**GET:**
+### Server API
+
+### GET:
 
 `GET api/attraction/:id/photos`
 
@@ -25,7 +27,7 @@ Returns the data requested for (photos, reviews, info, etc.)
 
 
 
-**POST:**
+### POST:
 
 `POST api/attraction/:id/improve`
 
@@ -46,7 +48,7 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-**PUT:**
+### PUT:
 
 `PUT api/attraction/:id`
 
@@ -67,7 +69,7 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-**PATCH:**
+### PATCH:
 
 `PATCH api/attraction/:id`
 
@@ -88,7 +90,7 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-**DELETE:**
+### DELETE:
 
 `DELETE api/attraction/:id`
 
