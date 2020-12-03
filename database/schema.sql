@@ -10,3 +10,10 @@ CREATE TABLE images (imageID int NOT NULL auto_increment, attractionID int,  url
 
 create TABLE reviews (reviewID int not null auto_increment, attractionID int, travelerRating int, PRIMARY KEY (reviewID), FOREIGN KEY (attractionID) REFERENCES attraction(attractionID));
 
+create TABLE hours (hoursID int not null auto_increment, attractionID int, hours JSON, PRIMARY KEY (hoursID), FOREIGN KEY (attractionID) REFERENCES attraction(attractionID));
+
+create TABLE tours (toursID int not null auto_increment, attractionID int, tours JSON, PRIMARY KEY (toursID), FOREIGN KEY (attractionID) REFERENCES attraction(attractionID));
+
+create TABLE improve (improveID int not null auto_increment, attractionID int, improvement JSON, PRIMARY KEY (improveID), FOREIGN KEY (attractionID) REFERENCES attraction(attractionID));
+
+
