@@ -1,12 +1,12 @@
 **GET:**
 
-GET /attraction/:id/photos
+`GET api/attraction/:id/photos`
 
-GET /attraction/:id/info
+`GET api/attraction/:id/info`
 
-GET /attraction/:id/reviews
+`GET api/attraction/:id/reviews`
 
-GET /attraction/:id/hours
+`GET api/attraction/:id/hours`
 
 **Parameters**
 
@@ -22,9 +22,12 @@ Returns the data requested for (photos, reviews, info, etc.)
 
 404: Unsuccessful attempt
 
+
+
+
 **POST:**
 
-POST /attraction/:id/improve
+`POST api/attraction/:id/improve`
 
 **Parameters**
 
@@ -43,11 +46,9 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-
-
 **PUT:**
 
-PUT /attraction/:id
+`PUT api/attraction/:id`
 
 **Parameters**
 
@@ -68,7 +69,7 @@ Returns a success message
 
 **PATCH:**
 
-PATCH /attraction/:id
+`PATCH api/attraction/:id`
 
 **Parameters**
 
@@ -89,7 +90,7 @@ Returns a success message
 
 **DELETE:**
 
-DELETE /attraction/:id
+`DELETE api/attraction/:id`
 
 **Parameters**
 
