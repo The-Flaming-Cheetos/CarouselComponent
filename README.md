@@ -1,39 +1,50 @@
-# Project Name
+GET:
+Routes
 
-> Project description
+GET /attraction/:id/photos
 
-## Related Projects
+GET /attraction/:id/info
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+GET /attraction/:id/reviews
 
-## Table of Contents
+GET /attraction/:id/hours
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+Parameters
 
-## Usage
+The id of the attraction being rendered
 
-> Some usage instructions
+Returns
 
-## Requirements
+Returns the data requested for (photos, reviews, info, etc.)
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+Status codes
 
-- Node 6.13.0
-- etc
+200: Successfully got the requested data
+404: Unsuccessful attempt
 
-## Development
+POST:
+POST /attraction/:id/improve
 
-### Installing Dependencies
+Parameters
 
-From within the root directory:
+The id of the attraction being rendered
 
-```sh
-npm install -g webpack
-npm install
-```
+Returns
 
+Returns a success message
+
+'Successfully posted'
+
+Status codes
+
+200: Successful post
+404: Unsuccessful attempt
+
+
+schema:
+photos
+reviews
+hours
+attraction
+tours
+improve this listing

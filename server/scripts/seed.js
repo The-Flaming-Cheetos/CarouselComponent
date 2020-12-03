@@ -2,7 +2,7 @@ const faker = require("faker");
 const Seeder = require("mysql-db-seed").Seeder;
 const db = require("../../database/index.js");
 
-const seed = new Seeder(10, "localhost", "root", "rootpass", "carousel");
+const seed = new Seeder(10, "localhost", "root", "MyNewPass", "carousel");
 
 for(let i = 0; i < 30; i++) {
 (async () => {
