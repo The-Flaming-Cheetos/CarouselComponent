@@ -1,6 +1,6 @@
 ### Server API
 
-### GET:
+### Get attraction details:
 
 `GET api/attraction/:id/photos`
 
@@ -18,6 +18,10 @@ The id of the attraction being rendered
 
 Returns the data requested for (photos, reviews, info, etc.)
 
+example for hours:
+
+`{"monday": "9 - 5", "tuesday": "9 - 5", "wednesday": "9 - 5", "thursday": "9 - 5", "friday": "9 - 5", "saturday": "closed", "sunday": "closed",}`
+
 **Status codes**
 
 200: Successfully got the requested data
@@ -27,19 +31,20 @@ Returns the data requested for (photos, reviews, info, etc.)
 
 
 
-### POST:
+### Add a picture:
 
-`POST api/attraction/:id/improve`
+`POST api/attraction/:id/photos/:photoURL`
 
 **Parameters**
 
 The id of the attraction being rendered
+The url to the photo you want to add
 
 **Returns**
 
-Returns a success message
+Returns the id of the photo
 
-'Successfully posted'
+`213`
 
 **Status codes**
 
@@ -48,7 +53,26 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-### PUT:
+
+### Add an improvement suggestion:
+
+`POST api/attraction/:id/improve`
+
+**Parameters**
+
+The id of the attraction being rendered
+
+`Request Body`: Expects JSON with the following keys
+`{"id" : 1, "user":"username", "improve":"improvement suggestion"}`
+
+**Status codes**
+
+200: Successful post
+
+404: Unsuccessful attempt
+
+
+### Update:
 
 `PUT api/attraction/:id`
 
@@ -90,13 +114,14 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-### DELETE:
+### Remove a photo:
 
-`DELETE api/attraction/:id`
+`DELETE api/attraction/:id/photo/:photoID`
 
 **Parameters**
 
 The id of the attraction being rendered
+The id of the photo to be deleted
 
 **Returns**
 
