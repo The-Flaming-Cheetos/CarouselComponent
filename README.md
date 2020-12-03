@@ -1,14 +1,14 @@
-### Server API
+# Server API
 
-### Get attraction details:
+### Get attraction details: <br />
 
-`GET api/attraction/:id/photos`
+GET `api/attraction/:id/photos`
 
-`GET api/attraction/:id/info`
+GET `api/attraction/:id/info`
 
-`GET api/attraction/:id/reviews`
+GET `api/attraction/:id/reviews`
 
-`GET api/attraction/:id/hours`
+GET `api/attraction/:id/hours`
 
 **Parameters**
 
@@ -20,7 +20,17 @@ Returns the data requested for (photos, reviews, info, etc.)
 
 example for hours:
 
-`{"monday": "9 - 5", "tuesday": "9 - 5", "wednesday": "9 - 5", "thursday": "9 - 5", "friday": "9 - 5", "saturday": "closed", "sunday": "closed",}`
+```json
+{
+  "monday": "9 - 5",
+  "tuesday": "9 - 5",
+  "wednesday": "9 - 5",
+  "thursday": "9 - 5",
+  "friday": "9 - 5",
+  "saturday": "closed",
+  "sunday": "closed"
+}
+```
 
 **Status codes**
 
@@ -31,9 +41,9 @@ example for hours:
 
 
 
-### Add a picture:
+### Add a picture: <br />
 
-`POST api/attraction/:id/photos/:photoURL`
+POST `api/attraction/:id/photos/:photoURL`
 
 **Parameters**
 
@@ -54,16 +64,22 @@ Returns the id of the photo
 
 
 
-### Add an improvement suggestion:
+### Add an improvement suggestion: <br />
 
-`POST api/attraction/:id/improve`
+POST `api/attraction/:id/improve`
 
 **Parameters**
 
 The id of the attraction being rendered
 
 `Request Body`: Expects JSON with the following keys
-`{"id" : 1, "user":"username", "improve":"improvement suggestion"}`
+```json
+{
+  "id" : 1,
+  "user":"username",
+  "improve":"improvement suggestion"
+}
+```
 
 **Status codes**
 
@@ -72,9 +88,9 @@ The id of the attraction being rendered
 404: Unsuccessful attempt
 
 
-### Update:
+### Update: <br />
 
-`PUT api/attraction/:id`
+PUT `api/attraction/:id`
 
 **Parameters**
 
@@ -93,9 +109,9 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-### PATCH:
+### PATCH: <br />
 
-`PATCH api/attraction/:id`
+PATCH `api/attraction/:id`
 
 **Parameters**
 
@@ -114,9 +130,9 @@ Returns a success message
 404: Unsuccessful attempt
 
 
-### Remove a photo:
+### Remove a photo: <br />
 
-`DELETE api/attraction/:id/photo/:photoID`
+DELETE `api/attraction/:id/photo/:photoID`
 
 **Parameters**
 
