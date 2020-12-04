@@ -2,13 +2,7 @@
 
 ### Get attraction details: <br />
 
-GET `api/attraction/:id/photos`
-
-GET `api/attraction/:id/info`
-
-GET `api/attraction/:id/reviews`
-
-GET `api/attraction/:id/hours`
+GET `api/attraction/:id`
 
 **Parameters**
 
@@ -18,17 +12,18 @@ The id of the attraction being rendered
 
 Returns the data requested for (photos, reviews, info, etc.)
 
-example for hours:
 
 ```json
 {
-  "monday": "9 - 5",
-  "tuesday": "9 - 5",
-  "wednesday": "9 - 5",
-  "thursday": "9 - 5",
-  "friday": "9 - 5",
-  "saturday": "closed",
-  "sunday": "closed"
+  "reviewCount": "1801",
+  "duration": "2-3 hours",
+  "trip_address": "525 S Winchester Blvd North San Jose, San Jose, CA 95128-2588",
+  "trip_hours": "10 - 4pm",
+  "trip_days": "M - F",
+  "trip_description": "This is the winchester house...",
+  "attractionTitle": "Winchester House",
+  "images": {"image1":"url"},
+  "tours": {"tour1":"description"},
 }
 ```
 
