@@ -1,15 +1,12 @@
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'MyNewPass',
-  database : 'carousel'
+const { Client } = require('pg');
+
+const client = new Client({
+  user: 'root',
+  host: 'localhost',
+  database: 'carousel',
+  password: 'pass'
 });
 
-connection.connect();
+client.connect();
 
-// connection.end();
-
-module.exports = {
-  connection:connection
-}
+module.exports = client;
