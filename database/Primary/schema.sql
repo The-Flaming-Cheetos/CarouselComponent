@@ -1,15 +1,14 @@
-
 create table attraction (
   attractionID SERIAL,
-  reviews JSON,
+  reviews TEXT,
   duration int,
-  trip_address varchar(200),
+  trip_address TEXT,
   trip_hours int,
   trip_days int,
   trip_description TEXT,
-  attractionTitle varchar(100),
+  attractionTitle TEXT,
   images text[],
-  hours JSON,
+  hours TEXT,
   PRIMARY KEY (attractionID)
 );
 

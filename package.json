@@ -10,7 +10,7 @@
   "scripts": {
     "react-dev": "webpack -d -w",
     "start": "nodemon ./server/index.js",
-    "seed": "dropdb --if-exists carousel && createdb carousel && psql -d carousel -U root -W < ./database/schema.sql && node ./database/seed.js"
+    "seed": "dropdb --if-exists carousel && createdb carousel && psql -d carousel -U root -W < ./database/primary/schema.sql && node ./database/primary/load.js"
   },
   "dependencies": {
     "@babel/core": "^7.6.2",
