@@ -10,18 +10,21 @@
   "scripts": {
     "react-dev": "webpack -d -w",
     "start": "nodemon ./server/index.js",
-    "seed": "dropdb --if-exists carousel && createdb carousel && psql -d carousel -U root -W < ./database/primary/schema.sql && node ./database/primary/load.js"
+    "seed-post": "dropdb --if-exists carousel && createdb carousel && psql -d carousel -U root -W < ./database/primary/schema.sql && node ./database/primary/load.js",
+    "seed-cass": "cqlsh < ./database/secondary/schema.sql"
   },
   "dependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "aws-sdk": "^2.804.0",
+    "cassandra-driver": "^4.6.1",
     "chai-http": "^4.3.0",
     "css-loader": "^5.0.1",
     "dotenv": "^8.2.0",
     "file-loader": "^6.2.0",
     "mocha": "^8.2.1",
+    "neo4j-driver": "^4.2.1",
     "nodemon": "^2.0.6",
     "pg": "^8.5.1",
     "react-fontawesome": "^1.7.1",
