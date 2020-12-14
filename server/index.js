@@ -1,32 +1,40 @@
+require('newrelic');
 const express = require('express');
 const app = express();
 
 const path = require("path");
-const db = require("../database/index.js");
+const db = require("../database/Primary/index.js");
 var faker = require('faker');
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 
-
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 app.get('/api/trips/CarouselComponent/:id/reviews',(req,res,next) => {
-  var id = req.params.id;
-  db.connection.query(`SELECT reviewCount FROM attraction where attractionId = ${id}`,(err, results, fields) => {
+  var id = Math.floor(Math.random() * 10000000);
+  db.query(`select reviews from attraction where attractionId = ${id};`,(err, results, fields) => {
     if(err) {
       throw err;
     } else {
-      res.send(results);
+      var str = results.rows[0].reviews;
+      str = str.replace('total', '"total"');
+      str = str.replace('average', '"average"');
+      console.log(JSON.parse(str));
+      res.send(JSON.parse(str));
     }
   })
 });
 
 app.get('/api/trips/CarouselComponent/:id/photos',(req,res,next) => {
-  db.connection.query(`SELECT urlLink from images WHERE imageID in (1,2,3,4,5,6,7,8,9,10,11,12,13)`, (err, results, fields) => {
+  var id = Math.floor(Math.random() * 10000000);
+  db.query(`select images from attraction where attractionId = ${id};`, (err, results, fields) => {
     if(err) {
       console.error('there is an error getting urls', err);
       throw err;
     } else {
-      res.send(results);
+      console.log('here');
+      res.send(results.rows[0].images);
     }
   })
 });

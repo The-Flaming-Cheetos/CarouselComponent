@@ -38,8 +38,9 @@ class Carousel extends React.Component {
   }
   componentDidMount() {
     axios.get('/api/trips/CarouselComponent/1/photos').then((response) => {
-      response.data.splice(8,1);
-      response.data.splice(4,1);
+      console.log(response.data);
+      // response.data.splice(8,1);
+      // response.data.splice(4,1);
       this.setState({
         imageUrls: response.data
       })
@@ -97,7 +98,7 @@ class Carousel extends React.Component {
 
         <Dots DotsArray={this.state.DotsArray} activeIndex = {this.state.activeDotIndex}></Dots>
 
-        <Slide url={this.state.imageUrls[this.state.activeIndex].urlLink} show={this.state.travelersHovered} showTravelersModal={this.showTravelersModal} closeTravelersModal = {this.closeTravelersModal}/>
+        <Slide url={this.state.imageUrls[this.state.activeIndex]} show={this.state.travelersHovered} showTravelersModal={this.showTravelersModal} closeTravelersModal = {this.closeTravelersModal}/>
 
         <RightArrow goToNextSlide = {this.goToNextSlide}/>
       </div>

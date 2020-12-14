@@ -37,17 +37,17 @@ const ShowGalleryPhotosModal = ({handleClose,galleryShow, images}) => {
   if(galleryShow === true) {
   return (
   <PhotosModal show={galleryShow} handleClose={handleClose} images={images}>
-  <Image0 src={images[0].urlLink}></Image0>
-  <Image0 src={images[1].urlLink}></Image0>
-  <Image0 src={images[2].urlLink}></Image0>
-  <Image0 src={images[3].urlLink}></Image0>
-  <Image0 src={images[4].urlLink}></Image0>
-  <Image0 src={images[5].urlLink}></Image0>
-  <Image0 src={images[6].urlLink}></Image0>
-  <Image0 src={images[7].urlLink}></Image0>
-  <Image0 src={images[9].urlLink}></Image0>
-  <Image0 src={images[10].urlLink}></Image0>
-  <Image0 src={images[11].urlLink}></Image0>
+  <Image0 src={images[0]}></Image0>
+  <Image0 src={images[1]}></Image0>
+  <Image0 src={images[2]}></Image0>
+  <Image0 src={images[3]}></Image0>
+  <Image0 src={images[4]}></Image0>
+  <Image0 src={images[5]}></Image0>
+  <Image0 src={images[6]}></Image0>
+  <Image0 src={images[7]}></Image0>
+  <Image0 src={images[9]}></Image0>
+  <Image0 src={images[10]}></Image0>
+  <Image0 src={images[11]}></Image0>
   <CloseIcon2 onClick = {() => handleClose()}/>
   </PhotosModal>
   );
@@ -144,11 +144,12 @@ class App extends React.Component {
     axios.get('/api/trips/CarouselComponent/1/reviews').then(
       (response) => {
         this.setState({
-         reviewCount: response.data[0].reviewCount.toLocaleString('en')
+         reviewCount: response.data.total.toLocaleString('en')
         })
       }
     );
       axios.get('/api/trips/CarouselComponent/1/photos').then((response) => {
+        console.log(response.data);
         this.setState({
           gallery: response.data
         })

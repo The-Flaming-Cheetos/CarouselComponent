@@ -25,6 +25,7 @@
     "file-loader": "^6.2.0",
     "mocha": "^8.2.1",
     "neo4j-driver": "^4.2.1",
+    "newrelic": "^7.0.2",
     "nodemon": "^2.0.6",
     "pg": "^8.5.1",
     "react-fontawesome": "^1.7.1",

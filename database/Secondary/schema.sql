@@ -5,6 +5,7 @@ CREATE KEYSPACE test WITH replication = {'class': 'SimpleStrategy', 'replication
 use test;
 
 create table attraction (
+  id int,
   reviews TEXT,
   duration int,
   trip_address TEXT,
@@ -14,5 +15,5 @@ create table attraction (
   attractionTitle TEXT,
   images TEXT,
   hours TEXT,
-  PRIMARY KEY (attractionTitle)
+  PRIMARY KEY (trip_hours, id)
 );

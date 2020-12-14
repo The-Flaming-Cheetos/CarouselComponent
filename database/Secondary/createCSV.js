@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const writeStream = fs.createWriteStream(path.join(__dirname, "/data.csv"));
-writeStream.write('reviews, duration, trip_address, trip_hours, trip_days, trip_description, attractionTitle, images, hours\n');
+writeStream.write('id, reviews, duration, trip_address, trip_hours, trip_days, trip_description, attractionTitle, images, hours\n');
 
 
 
@@ -20,7 +20,7 @@ var makeImages = () => {
   return imgs;
 }
 
-var generateRecord = () => {
+var generateRecord = (i) => {
   const reviews = `{"total": ${faker.random.number({min: 1, max: 10000})}, "average":${faker.random.number({min: 1, max: 5})}}`;
   const duration = faker.random.number({min: 1, max: 6});
   const address = faker.random.number() + ' ' + faker.address.streetName() + ', ' + faker.address.city() + ', ' + faker.address.country();
@@ -30,8 +30,9 @@ var generateRecord = () => {
   const title = faker.lorem.sentence();
   const hours = '{"monday":"9 am - 5 pm","tuesday":"9 am - 5 pm","wednesday":"9 am - 5 pm","thursday":"9 am - 5 pm","friday":"9 am - 5 pm","saturday":"9 am - 5 pm","sunday":"closed"}';
   const images = makeImages();
+  const id = i;
 
-  const record = `'${reviews}'| ${duration}| '${address}'| ${trip_hours}| ${trip_days}| '${description}'| '${title}'| '${images}'| '${hours}'\n`
+  const record = `${id}| '${reviews}'| ${duration}| '${address}'| ${trip_hours}| ${trip_days}| '${description}'| '${title}'| '${images}'| '${hours}'\n`
   return record;
 }
 
@@ -45,7 +46,7 @@ function createCSV(writer, i, callback) {
     let ok = true;
     do {
       i--;
-      data=callback();
+      data=callback(i);
       if (i === 0) {
         // Last time!
         writer.write(data);
