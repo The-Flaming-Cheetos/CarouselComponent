@@ -1,1 +1,0 @@
-// COPY test.attraction(id, reviews, duration, trip_address, trip_hours, trip_days, trip_description, attractionTitle, images, hours) FROM '/Users/Arman/Documents/HackReactor/SDC/CarouselComponent/database/Secondary/data.csv' WITH DELIMITER='|' AND HEADER=TRUE;
